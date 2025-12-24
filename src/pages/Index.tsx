@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Snowfall from '@/components/Snowfall';
+import MusicPlayer from '@/components/MusicPlayer';
 import WelcomeSlide from '@/components/slides/WelcomeSlide';
 import GoodGirlsSlide from '@/components/slides/GoodGirlsSlide';
 import CountdownSlide from '@/components/slides/CountdownSlide';
@@ -31,6 +32,7 @@ const Index = () => {
       </div>
       
       <Snowfall />
+      <MusicPlayer />
       
       <main className="relative z-10">
         {slides[currentSlide]}
