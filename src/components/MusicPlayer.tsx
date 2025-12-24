@@ -7,8 +7,9 @@ const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Create audio element
-    audioRef.current = new Audio('/christmas-music.mp3');
+    // Create audio element with correct base path for GitHub Pages
+    const audioPath = `${import.meta.env.BASE_URL}christmas-music.mp3`;
+    audioRef.current = new Audio(audioPath);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
 
