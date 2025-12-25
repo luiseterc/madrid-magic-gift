@@ -1,17 +1,18 @@
-import santaClaus from '@/assets/santa-claus.png';
-
 interface WelcomeSlideProps {
   onNext: () => void;
 }
 
 const WelcomeSlide = ({ onNext }: WelcomeSlideProps) => {
+  const videoSrc = import.meta.env.BASE_URL + 'papanoel.mp4';
+  
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
       <div className="animate-bounce-in">
-        <img
-          src={santaClaus}
-          alt="Papá Noel"
-          className="w-48 h-48 md:w-64 md:h-64 object-contain float-animation mx-auto mb-6 rounded-2xl"
+        <video
+          src={videoSrc}
+          controls
+          playsInline
+          className="w-72 h-72 md:w-96 md:h-96 object-cover float-animation mx-auto mb-6 rounded-2xl shadow-2xl"
         />
       </div>
       
