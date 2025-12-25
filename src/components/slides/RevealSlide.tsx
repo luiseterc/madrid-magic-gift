@@ -2,8 +2,13 @@ import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import PhotoGallery from '../PhotoGallery';
 import YouTubeEmbed from '../YouTubeEmbed';
+import { Button } from '@/components/ui/button';
 
-const RevealSlide = () => {
+interface RevealSlideProps {
+  onNext?: () => void;
+}
+
+const RevealSlide = ({ onNext }: RevealSlideProps) => {
   useEffect(() => {
     // Fire confetti multiple times
     const fireConfetti = () => {
@@ -101,6 +106,17 @@ const RevealSlide = () => {
         <p className="text-3xl mt-4">🎄❤️🎅</p>
         <p className="christmas-subtitle text-christmas-red mt-4">¡Feliz Navidad!</p>
       </div>
+
+      {onNext && (
+        <Button
+          onClick={onNext}
+          size="lg"
+          className="mt-8 bg-christmas-gold hover:bg-christmas-gold/90 text-background font-bold text-xl px-8 py-6 animate-fade-in"
+          style={{ animationDelay: '1.8s' }}
+        >
+          Continuar ✨
+        </Button>
+      )}
     </div>
   );
 };

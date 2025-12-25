@@ -6,6 +6,7 @@ import GoodGirlsSlide from '@/components/slides/GoodGirlsSlide';
 import CountdownSlide from '@/components/slides/CountdownSlide';
 import SuspenseSlide from '@/components/slides/SuspenseSlide';
 import RevealSlide from '@/components/slides/RevealSlide';
+import FinalSlide from '@/components/slides/FinalSlide';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,7 +20,8 @@ const Index = () => {
     <GoodGirlsSlide key="goodgirls" onNext={nextSlide} />,
     <CountdownSlide key="countdown" onNext={nextSlide} />,
     <SuspenseSlide key="suspense" onNext={nextSlide} />,
-    <RevealSlide key="reveal" />,
+    <RevealSlide key="reveal" onNext={nextSlide} />,
+    <FinalSlide key="final" />,
   ];
 
   return (
